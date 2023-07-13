@@ -18,12 +18,24 @@ public class removeDuplicates2 {
   modifying the input array in-place with O(1) extra memory.
    */
   public static void main(String[] args) {
-    int[] nums = {1,1,2,3,3,3,4,4};
-    k = removeDuplicates(nums);
+    int[] nums = {0,0,1,1,1,1,2,3,3};
+    int k = removeDuplicates(nums);
+    dry.printIntArray(nums);
   }
 
   public static int removeDuplicates(int[] nums){
+    int k = 0;
+    int count = 1;
 
-    return k;
+    for (int i = 1; i < nums.length; i++) {
+      if (nums[k] != nums[i] || count <2) {
+        k++;
+        nums[k] = nums[i];
+        count++;
+      }else{
+        count=1;
+      }
+    }
+    return k+1;
   }
 }
