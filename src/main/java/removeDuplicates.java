@@ -19,7 +19,7 @@ public class removeDuplicates {
   Output: 2, nums = [1,2,_]
    */
   public static void main(String[] args) {
-    int[] nums = {1,1,2,2,2,3,3,4,5,5,5,5};
+    int[] nums = {0,0,2,2,2,3,3,4,5,5,5,5};
     int k = removeDuplicates(nums);
     for (int i = 0; i < k; i++) {
       System.out.print(nums[i]+ ", ");
@@ -32,7 +32,7 @@ public class removeDuplicates {
     int p1 = 0;
     int p2 = 1;
     while(p2 < nums.length ){
-      if ((nums[p2] != 0 && nums[p1] == nums[p2]) ) {
+      if ((nums[p2] != 0 && nums[p1] == nums[p2] || (nums[0] == 0 && nums[1]==0)) ) {
 
         for (int i = p1; i < nums.length-k; i++) {
           if (i+1 < nums.length && i + 1 < nums.length) {
