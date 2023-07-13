@@ -1,3 +1,6 @@
+import java.util.Arrays;
+import java.util.List;
+
 public class removeDuplicates {
   /*
   Given an integer array nums sorted in non-decreasing order,
@@ -29,23 +32,20 @@ public class removeDuplicates {
 
   public static int removeDuplicates(int[] nums){
     int k=0;
-    int p1 = 0;
+    int p1 =0;
     int p2 = 1;
-    while(p2 < nums.length ){
-      if ((nums[p2] != 0 && nums[p1] == nums[p2] || (nums[0] == 0 && nums[1]==0)) ) {
-
         for (int i = p1; i < nums.length-k; i++) {
-          if (i+1 < nums.length && i + 1 < nums.length) {
-            nums[i] = nums[i + 1];
-            nums[i + 1] = 0;
+          if (nums[p2] != 9999 && nums[p1] == nums[p2]) {
+            if (i+1 < nums.length && i + 1 < nums.length) {
+              nums[i] = nums[i + 1];
+              nums[i + 1] = 9999;
+            }
+            k++;
+          }else{
+            p2++;
+            p1++;
           }
         }
-        k++;
-      }else{
-        p2++;
-        p1++;
-      }
-    }
 
     return nums.length - k;
   }
