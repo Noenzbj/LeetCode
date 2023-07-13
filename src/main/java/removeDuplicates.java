@@ -1,7 +1,4 @@
 public class removeDuplicates {
-  public static void main(String[] args) {
-
-  }
   /*
   Given an integer array nums sorted in non-decreasing order,
   remove the duplicates in-place such that each unique element
@@ -21,4 +18,35 @@ public class removeDuplicates {
   Input: nums = [1,1,2]
   Output: 2, nums = [1,2,_]
    */
+  public static void main(String[] args) {
+    int[] nums = {0,0,1,1,2,3,3,4,5,5,5,5};
+    int k = removeDuplicates(nums);
+    for (int i = 0; i < k; i++) {
+      System.out.print(nums[i]+ ", ");
+    }
+
+  }
+
+  public static int removeDuplicates(int[] nums){
+    int k=0;
+    int p1 = 0;
+    int p2 = 1;
+    while(p2 < nums.length ){
+      if ((nums[k] != 0 && nums[p1] == nums[p2]) ) {
+
+        for (int i = p1; i < nums.length-k; i++) {
+          if (i+1 < nums.length && i + 1 < nums.length) {
+            nums[i] = nums[i + 1];
+            nums[i + 1] = 0;
+          }
+        }
+        k++;
+      }else{
+        p2++;
+        p1++;
+      }
+    }
+
+    return nums.length - k;
+  }
 }
