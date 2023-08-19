@@ -40,7 +40,7 @@ public class majorityElement {
 //  }
 //}
 
-  public int majorityElement(int[] nums) {
+  public static int majorityElement(int[] nums) {
     // Initialize variables to keep track of the majority element and its occurrence count.
     int count = 0;
     int majority = 0;
